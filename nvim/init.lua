@@ -16,14 +16,9 @@ Plug('fatih/vim-go', {
 Plug('neoclide/coc.nvim', {
     ['branch'] = 'release'
 }) -- Using a non-default branch
-Plug('junegunn/fzf', {
-    ['dir'] = '~/.fzf'
-}) -- Install in a non-default directory
+-- Install in a non-default directory -- Post-update hook: shell command
 Plug('junegunn/fzf', {
     ['dir'] = '~/.fzf',
-    ['do'] = './install --all'
-}) -- Post-update hook: shell command
-Plug('junegunn/fzf', {
     ['do'] = function()
         vim.fn['fzf#install']()
     end
@@ -61,6 +56,7 @@ Plug('scrooloose/nerdcommenter')
 Plug('sheerun/vim-polyglot')
 Plug('jiangmiao/auto-pairs')
 Plug('tpope/vim-fugitive')
+Plug('lewis6991/gitsigns.nvim')
 
 -- Language Support
 Plug('neovim/nvim-lspconfig') -- Required for LSP
@@ -102,3 +98,4 @@ require('lsp-config')
 require('autopairs-config')
 require('indent-blankline-config')
 require('terminal-config')
+require('gitsigns-config')
